@@ -2,7 +2,7 @@ const assert = require('assert');
 
 const splitTime = function(s) {
   let hours = s.substring(0, 2);
-  let hoursNum = parseInt(hours, 10);
+  let hoursNum = parseInt(hours, 10); // get number base 10
   let amPm = s.substring(8,10);
 
   if (amPm == "PM"){
