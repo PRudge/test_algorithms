@@ -29,4 +29,5 @@ describe('Candles', function() {
     const arr = [ 8,3,2,8,1,3,5,6,8,3]
     assert.equal(3 , candles.countCandles(arr))
   });
+  
 });

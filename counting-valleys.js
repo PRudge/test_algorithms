@@ -20,6 +20,8 @@ const countingValleys = function(n, s) {
   if (n!= parseInt(n , 0)) return;
   if (n!= arrLen) return;
 
+  // all constraints are OK
+
   upDownArr = upDownArr.map(steps => ((steps === "U") ? 1 : -1));
 
   let path = 0;
@@ -37,7 +39,7 @@ const countingValleys = function(n, s) {
   });
 
   return numValleys;
-  
+
 }
 
 describe('Counting Valleys', function() {
