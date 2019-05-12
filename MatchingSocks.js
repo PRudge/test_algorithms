@@ -7,16 +7,9 @@ const matchingPairsSox = function(n, ar) {
   let count = 0;
   let last = ar[0];
 
-//   // before
-// for (let i=0; i<items.length; i++) {
-//   copy.push(items[i]);
-// }
-//
-// // after
-// items.forEach(function(item){
-//   copy.push(item);
-// });
 
+  // for (let i =0; i<ar.length; i++){
+  // ar.forEach(function(sock) {
   ar.forEach((sock) => {
 
     if (sock == last){
