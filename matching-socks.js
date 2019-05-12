@@ -34,9 +34,13 @@ const matchingPairsSox = function(n, ar) {
 }
 
 describe('Matching Socks', function() {
-  it('should be able to calculate number of pairs of socks', function() {
-    const ar = [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
+  let ar = [];
 
+  beforeEach(function(){
+    ar = [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
+  });
+
+  it('should be able to calculate number of pairs of socks', function() {
     assert.equal(6 , matchingPairsSox(15, ar));
   });
 });

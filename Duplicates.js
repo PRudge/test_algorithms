@@ -18,7 +18,7 @@ function countDuplicates(numArray) {
 
 }
 
-describe('Find Duplicates In Array', function() {
+describe('Duplicates', function() {
 
   let numArray = [];
 
@@ -26,7 +26,7 @@ describe('Find Duplicates In Array', function() {
     duplicateArray = ["z", "a", "b", "c", "d", "b", "a", "z"];
   });
 
-  it('should be able to get duplicates', function() {
+  it('should be able to get duplicates in an array', function() {
     assert.equal(3 , countDuplicates(duplicateArray) );
   });
 });

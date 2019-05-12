@@ -14,7 +14,7 @@ function findPairs(sum , numArray) {
 
 }
 
-describe('find pairs that make sum ', function() {
+describe('Find Pairs That Sum', function() {
 
   let numArray = [];
   let sum = 0;
@@ -25,7 +25,7 @@ describe('find pairs that make sum ', function() {
     sum = 7;
   });
 
-  it('should be able to array of pairs', function() {
+  it('should be able get to array of pairs that match inputted sum', function() {
     const arrayOfPairs = findPairs(sum, numArray)
     assert.equal(3 , arrayOfPairs.length );
   });

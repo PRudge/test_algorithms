@@ -28,12 +28,19 @@ const getDistanceCount = function(fruitName, hits, fruits, distFromTree, s , t){
 }
 
 describe('Oranges and Apples', function() {
+
+  let hits = {};
+
+  beforeEach(function(){
+    hits = numHits(7, 11, 5, 15, [-2, 2, 1, 6, 4], [5, -6, 4, 2, 1])
+  });
+
   it('should be able to count number of hits on house', function() {
-    const hits = numHits(7, 11, 5, 15, [-2, 2, 1, 6, 4], [5, -6, 4, 2, 1])
     const expected = {
       appleHits: 3,
       orangeHits: 1
     }
+    
     assert.deepStrictEqual(expected , hits);
   });
 });
