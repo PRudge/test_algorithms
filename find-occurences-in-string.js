@@ -1,17 +1,14 @@
 const assert = require('assert');
 
-const findOccurencesInString = function(l, s, n) {
-
-  let letterOfInterest = l;
-  let strChars = s;
-  let numberOfChars = n;
+const findOccurencesInString = function(letterOfInterest, strChars, numberOfChars) {
+  
   let arrLen = 0;
 
   let arrOfChars = []
   const maxString = 100;
   const maxNumChars = Math.pow(10, 12);
   let repeatChars = 0;
-  let extras = 0;
+  let remainder = 0;
   let stringToTest = "";
   const findLet = letterOfInterest;
   let totalLet = 0;
@@ -27,13 +24,13 @@ const findOccurencesInString = function(l, s, n) {
 
   repeatChars = parseInt((numberOfChars/arrOfChars.length), 10);
 
-  extras = numberOfChars % arrOfChars.length;
+  remainder = numberOfChars % arrOfChars.length;
 
   for (let i = 0; i < repeatChars; i++){
     stringToTest += strChars;
   }
 
-  for (let i = 0; i < extras; i++){
+  for (let i = 0; i < remainder; i++){
     stringToTest += arrOfChars[i];
   }
 
@@ -60,7 +57,7 @@ describe('Find Occurences in String', function() {
 
     // str = "abbaabaabaa"
     // str = "az"
-    str = ["a","z"];
+    str = ["a","z", "a", "b"];
     sizeOfString = 1000000;
   });
 
@@ -71,6 +68,6 @@ describe('Find Occurences in String', function() {
 
   it(`should be able to calculate number of z's`, function() {
     letterOfInterest = "z";
-    assert.equal(500000, findOccurencesInString(letterOfInterest, str, sizeOfString));
+    assert.equal(250000, findOccurencesInString(letterOfInterest, str, sizeOfString));
   });
 });
