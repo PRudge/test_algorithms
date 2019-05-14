@@ -1,11 +1,12 @@
 const assert = require('assert');
 
 const findOccurencesInString = function(letterOfInterest, strChars, numberOfChars) {
-  
-  let arrLen = 0;
 
+  let arrLen = 0;
   let arrOfChars = []
-  const maxString = 100;
+
+  const minStr = 1;
+  const maxStr = 100;
   const maxNumChars = Math.pow(10, 12);
   let repeatChars = 0;
   let remainder = 0;
@@ -18,7 +19,7 @@ const findOccurencesInString = function(letterOfInterest, strChars, numberOfChar
   arrLen = arrOfChars.length;
 
   // check constraints
-  if (arrLen > maxString || numberOfChars > maxNumChars) return;
+  if (arrLen > maxStr || numberOfChars > maxNumChars) return;
 
   // constraints are OK so let's go
 
