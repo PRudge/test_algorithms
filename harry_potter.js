@@ -20,6 +20,7 @@ function houses(students) {
 
   houses.forEach((house) => {
     let houseCount = 0;
+    houseStudents = [];
     for (j=0; j<studentsArray.length; j++){
       if (studentsArray[j].house === house){
         houseStudents.push(studentsArray[j])
@@ -28,16 +29,16 @@ function houses(students) {
     }
 
     houseObj[house]= houseStudents;
-    houseStudents = [];
+
   });
 
-  console.log(houseObj);
-  
+  console.log(houseObj.Gryffindor[0].wand);
+
   return houseObj;
 
 }
 
-describe('Harry Potter', function() {
+describe('Harry Potter Houses...', function() {
 
   let students = {
     0:{
@@ -950,7 +951,7 @@ describe('Harry Potter', function() {
        alive: true,
        image: 'http://hp-api.herokuapp.com/images/luna.jpg' } ] }
 
-  it('should be able to get an array of houses', function() {
+  it('should be able to get an object of houses', function() {
 
     const arrayOfHouses = houses(students);
     assert.deepStrictEqual(housesOfStudents , arrayOfHouses );
