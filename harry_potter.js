@@ -1,12 +1,12 @@
 const assert = require('assert');
 
 function houses(students) {
+
+  let studentsArray = Object.values(students); // make an array of student objects
+
   let houses = []
 
-  // houses = students.filter(student => student.house);
-  // tempHouses = students.filter(student => student.house === houseName);
-
-  const tempHouses = students.map(x => x.house);
+  const tempHouses = studentsArray.map(x => x.house);
 
 
   tempHouses.forEach((house) => {
@@ -16,14 +16,24 @@ function houses(students) {
 
   })
 
+  let houseObj = {};
 
 
-  let valueStudent = Object.values(students);
+houses.forEach((house) => {
+    let houseCount = 0;
+    console.log(house);
+    for (j=0; j<studentsArray.length; j++){
+      if (studentsArray[j].house === house){
 
-  // studentsOfHouse2 = valueStudent.filter(student => student.house === houseName);
 
+        houseObj[house]= studentsArray[j];
+        houseCount+= 1;
+        console.log('student', studentsArray[j]);
 
+      }
 
+    }
+  });
   return houses;
 
 }
@@ -32,8 +42,8 @@ function houses(students) {
 
 describe('Harry Potter', function() {
 
-  let students = [
-    {
+  let students = {
+    0:{
       "name": "Harry Potter",
       "species": "human",
       "gender": "male",
@@ -55,7 +65,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/harry.jpg"
     },
-    {
+    1:{
       "name": "Hermione Granger",
       "species": "human",
       "gender": "female",
@@ -77,7 +87,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/hermione.jpeg"
     },
-    {
+    2:{
       "name": "Ron Weasley",
       "species": "human",
       "gender": "male",
@@ -99,7 +109,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/ron.jpg"
     },
-    {
+    3:{
       "name": "Draco Malfoy",
       "species": "human",
       "gender": "male",
@@ -121,7 +131,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/draco.jpg"
     },
-    {
+    4:{
       "name": "Minerva McGonagall",
       "species": "human",
       "gender": "female",
@@ -143,7 +153,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg"
     },
-    {
+    5:{
       "name": "Cedric Diggory",
       "species": "human",
       "gender": "male",
@@ -165,7 +175,7 @@ describe('Harry Potter', function() {
       "alive": false,
       "image": "http://hp-api.herokuapp.com/images/cedric.png"
     },
-    {
+    6:{
       "name": "Cho Chang",
       "species": "human",
       "gender": "female",
@@ -187,7 +197,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/cho.jpg"
     },
-    {
+    7:{
       "name": "Severus Snape",
       "species": "human",
       "gender": "male",
@@ -209,7 +219,7 @@ describe('Harry Potter', function() {
       "alive": false,
       "image": "http://hp-api.herokuapp.com/images/snape.jpg"
     },
-    {
+    8:{
       "name": "Rubeus Hagrid",
       "species": "half-giant",
       "gender": "male",
@@ -231,7 +241,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/hagrid.png"
     },
-    {
+    9:{
       "name": "Neville Longbottom",
       "species": "human",
       "gender": "male",
@@ -253,7 +263,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/neville.jpg"
     },
-    {
+    10:{
       "name": "Luna Lovegood",
       "species": "human",
       "gender": "female",
@@ -275,7 +285,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/luna.jpg"
     },
-    {
+    11:{
       "name": "Ginny Weasley",
       "species": "human",
       "gender": "female",
@@ -297,7 +307,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/ginny.jpg"
     },
-    {
+    12: {
       "name": "Sirius Black",
       "species": "human",
       "gender": "male",
@@ -319,7 +329,7 @@ describe('Harry Potter', function() {
       "alive": false,
       "image": "http://hp-api.herokuapp.com/images/sirius.JPG"
     },
-    {
+    13: {
       "name": "Remus Lupin",
       "species": "werewolf",
       "gender": "male",
@@ -341,7 +351,7 @@ describe('Harry Potter', function() {
       "alive": false,
       "image": "http://hp-api.herokuapp.com/images/lupin.jpg"
     },
-    {
+    14: {
       "name": "Arthur Weasley",
       "species": "human",
       "gender": "male",
@@ -363,7 +373,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/arthur.jpg"
     },
-    {
+    15:{
       "name": "Bellatrix Lestrange",
       "species": "human",
       "gender": "female",
@@ -385,7 +395,7 @@ describe('Harry Potter', function() {
       "alive": false,
       "image": "http://hp-api.herokuapp.com/images/bellatrix.jpg"
     },
-    {
+    16: {
       "name": "Lord Voldemort",
       "species": "human",
       "gender": "male",
@@ -407,7 +417,7 @@ describe('Harry Potter', function() {
       "alive": false,
       "image": "http://hp-api.herokuapp.com/images/voldemort.jpg"
     },
-    {
+    17: {
       "name": "Horace Slughorn",
       "species": "human",
       "gender": "male",
@@ -429,7 +439,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/slughorn.JPG"
     },
-    {
+    18: {
       "name": "Kingsley Shacklebolt",
       "species": "human",
       "gender": "male",
@@ -451,7 +461,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/kingsley.jpg"
     },
-    {
+    19: {
       "name": "Dolores Umbridge",
       "species": "human",
       "gender": "female",
@@ -473,7 +483,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/umbridge.jpg"
     },
-    {
+    20: {
       "name": "Lucius Malfoy",
       "species": "human",
       "gender": "male",
@@ -495,7 +505,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/lucius.jpg"
     },
-    {
+    21: {
       "name": "Vincent Crabbe",
       "species": "human",
       "gender": "male",
@@ -517,7 +527,7 @@ describe('Harry Potter', function() {
       "alive": false,
       "image": "http://hp-api.herokuapp.com/images/crabbe.jpg"
     },
-    {
+    22: {
       "name": "Gregory Goyle",
       "species": "human",
       "gender": "male",
@@ -539,7 +549,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/goyle.jpg"
     },
-    {
+    23: {
       "name": "Mrs Norris",
       "species": "cat",
       "gender": "female",
@@ -561,7 +571,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/norris.JPG"
     },
-    {
+    24: {
       "name": "Argus Filch",
       "species": "human",
       "gender": "male",
@@ -583,7 +593,7 @@ describe('Harry Potter', function() {
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/filch.jpg"
     }
-  ]
+  }
 
 
   beforeEach(function () {
@@ -592,7 +602,8 @@ describe('Harry Potter', function() {
 
   it('should be able to get an array of houses', function() {
 
-    const arrayOfHouses = houses(students)
+    const arrayOfHouses = houses(students);
+    console.log(arrayOfHouses);
     assert.equal(4 , arrayOfHouses.length );
   });
 });
