@@ -8,30 +8,24 @@ function houses(students) {
 
   const tempHouses = studentsArray.map(x => x.house);
 
-
   tempHouses.forEach((house) => {
     if (!(houses.includes(house)) && (house != "")){
       houses.push(house);
     }
-
-  })
+  });
 
   let houseObj = {};
 
 
-houses.forEach((house) => {
+  houses.forEach((house) => {
     let houseCount = 0;
     console.log(house);
     for (j=0; j<studentsArray.length; j++){
       if (studentsArray[j].house === house){
-
-
         houseObj[house]= studentsArray[j];
         houseCount+= 1;
         console.log('student', studentsArray[j]);
-
       }
-
     }
   });
   return houses;
