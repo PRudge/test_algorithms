@@ -32,7 +32,7 @@ function houses(students) {
 
   });
 
-  console.log(houseObj.Gryffindor[0].wand);
+  console.log("wand:length", houseObj.Gryffindor[0].wand.length);
 
   return houseObj;
 
@@ -951,7 +951,7 @@ describe('Harry Potter Houses...', function() {
        alive: true,
        image: 'http://hp-api.herokuapp.com/images/luna.jpg' } ] }
 
-  it('should be able to get an object of houses', function() {
+  it('should be able to get an object of different houses', function() {
 
     const arrayOfHouses = houses(students);
     assert.deepStrictEqual(housesOfStudents , arrayOfHouses );
