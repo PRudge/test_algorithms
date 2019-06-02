@@ -21,18 +21,18 @@ function houses(students) {
   houses.forEach((house) => {
     let houseCount = 0;
     houseStudents = [];
-    for (j=0; j<studentsArray.length; j++){
-      if (studentsArray[j].house === house){
-        houseStudents.push(studentsArray[j])
+    studentsArray.forEach((student) => {
+      if (student.house === house){
+        houseStudents.push(student);
         houseCount+= 1;
       }
-    }
+    });
 
     houseObj[house]= houseStudents;
 
   });
 
-  console.log("wand:length", houseObj.Gryffindor[0].wand.length);
+  console.log("wand:wood", houseObj.Gryffindor[1].wand.wood);
 
   return houseObj;
 
